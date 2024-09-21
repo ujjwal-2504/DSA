@@ -42,7 +42,7 @@ int main() {
    // output
   //  610 250 60 20 29 20 920  ⊛
   //  ↑                        ↑
-  // l1.begin()              l1.end() => not (920) ∴ it != l1.end();
+  // l1.begin()              l1.end() => not (920) ∴ we use, it != l1.end();
   
   // printing in reverse order
   for(auto it = l1.rbegin(); it != l1.rend(); it++) {
