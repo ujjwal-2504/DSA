@@ -1,14 +1,14 @@
 #include<iostream>
 using namespace std;
 
-class MaxHeap {
+class MinHeap {
 
   int *arr;
   int size; // Total elements currently present in heap
   int totalSize; // Total size of heap
 
   public:
-    MaxHeap(int n) {
+    MinHeap(int n) {
 
       arr = new int[n];
       size = 0;
@@ -32,7 +32,7 @@ class MaxHeap {
 
       // Compare it with parent
 
-      while(index > 0 && arr[(index-1)/2] < arr[index]) {
+      while(index > 0 && arr[(index-1)/2] > arr[index]) {
 
         swap(arr[(index-1/2)], arr[index]);
 
@@ -50,7 +50,7 @@ class MaxHeap {
       cout<<endl;
     }
 
-    // Delete operation 
+    // Delete operation
     // T.C. -> O(log n)
     void Delete() {
 
@@ -74,18 +74,18 @@ class MaxHeap {
 
     void Heapify(int index) {
       
-      int largest = index;
+      int smallest = index;
       int left = 2 * index +1, right = 2 * index +2;
       
-      // largest stores index of largest child.
-      if(left < size && arr[left] > arr[largest])
-        largest = left;
-      if(right < size && arr[right] > arr[largest])
-        largest = right;
+      // smallest stores index of smallest child.
+      if(left < size && arr[left] < arr[smallest])
+        smallest = left;
+      if(right < size && arr[right] < arr[smallest])
+        smallest = right;
 
-      if(largest != index) {
-        swap(arr[index], arr[largest]);
-        Heapify(largest);
+      if(smallest != index) {
+        swap(arr[index], arr[smallest]);
+        Heapify(smallest);
       }
 
     }
@@ -93,7 +93,7 @@ class MaxHeap {
 
 int main() {
 
-  MaxHeap H1(6);
+  MinHeap H1(6);
 
   H1.insert(10);
   H1.insert(5);
