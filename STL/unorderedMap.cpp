@@ -2,8 +2,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// All properties of map except:
-// but can be in any order.
+// All properties of map.
+// but have no specific order to store elements
 // T.C -> constant O(1)
 
 int main() {

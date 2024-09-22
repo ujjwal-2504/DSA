@@ -27,7 +27,9 @@ int main() {
   //   cout<<it ->first<<" "<<it ->second<<endl;
   // }
 
-  cout<<m1[400]<<endl;
+  if(m1[400]) cout<<"Present"<<endl;
+  else cout<<"Absent"<<endl;
+
 
   // delete 
   m1.erase(35);
@@ -55,6 +57,8 @@ int main() {
   // m2[40] = 4000; 
 
   cout<<"\nMulti Map"<<endl;
+
+  m2.erase(20);
 
   for(auto it = m2.begin(); it != m2.end(); it++) {
 
